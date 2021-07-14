@@ -104,7 +104,6 @@ bool TLangModel::Train(const std::string& fileName, const std::string& alphabetF
         return false;
     }
     std::wstring trainText = UTF8ToWide(LoadFile(fileName));
-    ToLower(trainText);
     TSentences sentences = Tokenizer.Process(trainText);
     if (sentences.empty()) {
         std::cerr << "[error] no sentences" << std::endl;
